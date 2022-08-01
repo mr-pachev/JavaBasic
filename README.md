@@ -1,2 +1,2 @@
-# JavaBasic
- SoftUni - Java Basic
+# JavaBasic - course
+ https://about.softuni.bg
