@@ -12,6 +12,6 @@ public class PetShop_08 {
 
         double animalsFood = (dogFood * 2.5) + (catFood * 4);
 
-        System.out.println(animalsFood);
+        System.out.println(animalsFood + " lv.");
     }
 }
