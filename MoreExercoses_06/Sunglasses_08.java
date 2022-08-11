@@ -48,24 +48,6 @@ public class Sunglasses_08 {
                 System.out.println();
             }
 
-//            for (int i = 1; i < 2 * n - 2; i++) {
-//                System.out.print("*");
-//                for (int j = 1; j <= 2 * n - 2; j++) {
-//                    System.out.print("/");
-//                }
-//                System.out.print("*");
-//                for (int k = 1; k <= (2 * n - 2) - 1; k++) {
-//                    System.out.print("|");
-//                }
-//                System.out.print("*");
-//                for (int l = 1; l <= 2 * n - 2; l++) {
-//                    System.out.print("/");
-//                }
-//                System.out.print("*");
-//                System.out.println();
-//            }
-
-
             // последен ред
             for (int m = 0; m < 2 * n; m++) {
                 System.out.print("*");
