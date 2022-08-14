@@ -2,7 +2,7 @@ package MoreExercises_06;
 
 import java.util.Scanner;
 
-public class Demo {
+public class Diamond_10 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -12,7 +12,7 @@ public class Demo {
 
             // лява част на реда
             for (int j = i; j <= (n / 2) + 1; j++) { //върти местоположението но * в дадения половин ред
-                if (j <  (n / 2) + 1) {
+                if (j < (n / 2) + 1) {
                     System.out.print("-");
                 } else {
                     System.out.print("*");
