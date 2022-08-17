@@ -10,22 +10,23 @@ public class Demo {
 
         int leftRight = (n - 1) / 2;
 
-        for (int row = 0; row < n; row++) {
+        for (int row = 0; row < n; row++) { //цикъл минава през всеки ред от диаманта
 
             for (int i = 0; i <= n; i++) { //цикъл да мине през всички индекси на реда
 
                 if (i <= leftRight - 1 && row != (n / 2) + 1) {
                     System.out.print("-");
-                } else if(i == leftRight){
+                } else if (i == leftRight) {
                     System.out.print("*");
 
-                }else if (i == leftRight + 1 && row > 0 && leftRight >= 0) {
+                } else if (i == leftRight + 1 && row > 0 && leftRight >= 0) {
+
                     for (int j = 1; j <= row; j++) {
                         System.out.print("--");
                         i += 2;
                     }
 
-                }else if (i > n - leftRight) {
+                } else if (i > n - leftRight) {
                     System.out.print("-");
 
                 } else if (i == (n - leftRight)) {
@@ -34,7 +35,12 @@ public class Demo {
 
             }
             System.out.println();
-            leftRight--;
+            if (row < (n / 2) - 1) {
+                leftRight--;
+            } else {
+                leftRight++;
+            }
+
         }
 
     }
