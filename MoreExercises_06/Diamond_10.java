@@ -18,7 +18,7 @@ public class Diamond_10 {
                 } else if (i == leftRight + 1) {
                     System.out.print("*");
 
-                } else if (i == leftRight + 2 && row > 1 && leftRight >= 0 && row != n) {
+                } else if (i == leftRight + 2 && row > 1 && leftRight >= 0 && row != n - 1) {
                     if (row > n / 2) {
                         for (int j = 1; j <= n - (row + 1); j++) {
                             System.out.print("--");
