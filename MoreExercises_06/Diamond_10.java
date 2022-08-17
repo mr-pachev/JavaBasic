@@ -8,23 +8,33 @@ public class Diamond_10 {
 
         int n = Integer.parseInt(scanner.nextLine());
 
-        for (int i = 1; i <= (n / 2) + 1; i++) { //върти полавината ред на диаманта включително средния
+        int leftRight = (n - 1) / 2;
 
-            // лява част на реда
-            for (int j = i; j <= (n / 2) + 1; j++) { //върти местоположението но * в дадения половин ред
-                if (j < (n / 2) + 1) {
+        for (int row = 0; row < n; row++) {
+
+            for (int i = 0; i <= n; i++) { //цикъл да мине през всички индекси на реда
+
+                if (i <= leftRight - 1 && row != (n / 2) + 1) {
                     System.out.print("-");
-                } else {
+                } else if (i == leftRight) {
+                    System.out.print("*");
+
+                } else if (i == leftRight + 1 && row > 0 && leftRight >= 0) {
+                    for (int j = 1; j <= row; j++) {
+                        System.out.print("--");
+                        i += 2;
+                    }
+
+                } else if (i > n - leftRight) {
+                    System.out.print("-");
+
+                } else if (i == (n - leftRight)) {
                     System.out.print("*");
                 }
-            }
-            if (i > 1) { //допълва до края на полу реда с тирета след *
-                for (int k = ((n / 2) - i); k < (n / 2) - 1; k++) {
-                    System.out.print("-");
-                }
-            }
 
+            }
             System.out.println();
+            leftRight--;
         }
 
     }
