@@ -11,37 +11,37 @@ public class Diamond_10 {
         int leftRight = (n - 1) / 2; //тирета от едната страна на реда
 
         for (int row = 1; row <= n - 1; row++) { //цикъл минава през всеки ред от диаманта
-            for (int i = 1; i <= n; i++) { //цикъл да мине през всички индекси на конкретния дадения ред
+            for (int index = 1; index <= n; index++) { //цикъл да мине през всички индекси на конкретния дадения ред
 
-                if (i <= leftRight) {
+                if (index <= leftRight) {
                     System.out.print("-");
-                } else if (i == leftRight + 1) {
+                } else if (index == leftRight + 1) {
                     System.out.print("*");
 
-                } else if (i == leftRight + 2 && row > 1 && leftRight >= 0 && row != n - 1) {
+                } else if (index == leftRight + 2 && row > 1 && leftRight >= 0 && row != n - 1) {
                     if (row > n / 2) {
                         for (int j = 1; j <= n - (row + 1); j++) {
                             System.out.print("--");
                             if(j % 2 == 0) {
-                                i += 2;
+                                index += 2;
                             }else {
-                                i++;
+                                index++;
                             }
                         }
                     }else {
                         for (int j = 1; j <= row - 1; j++) {
                             System.out.print("--");
                             if(j % 2 == 0) {
-                                i += 2;
+                                index += 2;
                             }else {
-                                i++;
+                                index++;
                             }
                         }
                     }
-                } else if (i > n - leftRight) {
+                } else if (index > n - leftRight) {
                     System.out.print("-");
 
-                } else if (i == (n - leftRight)) {
+                } else if (index == (n - leftRight)) {
                     System.out.print("*");
                 }
 
