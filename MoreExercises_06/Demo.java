@@ -92,7 +92,7 @@ public class Demo {
                                             index++;
                                         } else {
                                             System.out.print("--");
-                                            index += 2;
+                                            index ++;
                                         }
                                     } else {
                                         System.out.print("-");
@@ -103,7 +103,7 @@ public class Demo {
                                     }
                                 }
                             }else if(row >= (n / 2) + 1){ //проверка дали текущи ред е подминал средния ред включитебно на диаманта
-                                for (int j = 1; j <= row - 1; j++) { //цикъл за средата на текущия ред след средния ред на диаманта
+                                for (int j = 1; j <= n - row; j++) { //цикъл за средата на текущия ред след средния ред на диаманта
 
                                     if (row > 2 && j > 1) { //проверка дали повтарящите се тирета в средата на реда са повече от един индекс
                                         if (j % 2 != 0) {
@@ -111,13 +111,10 @@ public class Demo {
                                             index++;
                                         } else {
                                             System.out.print("--");
-                                            index += 2;
+                                            index ++;
                                         }
                                     } else {
                                         System.out.print("-");
-                                        if (row > (n / 2) + 1) {
-                                            index++;
-                                        }
 
                                     }
                                 }
