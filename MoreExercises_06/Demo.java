@@ -46,7 +46,6 @@ public class Demo {
                     } else if (index == (n - leftRight)) {
                         System.out.print("*");
                     }
-
                 }
                 System.out.println();
                 if (row <= (n / 2) - 1) {
@@ -54,15 +53,14 @@ public class Demo {
                 } else {
                     leftRight++;
                 }
-
             }
         } else { //за нечетно n
             for (int row = 1; row <= n; row++) { //цикъл минава през всеки ред от диаманта
-                for (int index = 1; index <= n; index++) { //цикъл да мине през всички индекси на конкретния дадения ред
+                for (int index = 1; index <= n; index++) { //цикъл за преминаване през всички индекси на конкретния ред
 
-                    if (index <= leftRight) {
+                    if (index <= leftRight) { //принтера първата част на реда с тиретата включително и звездичката
                         System.out.print("-");
-                    } else if (index == leftRight + 1) {
+                    } else if (index == leftRight + 1) { //проверка за принтиране на една звездичка на първия ред при нечетно n
                         System.out.print("*");
 
                     } else if (index == leftRight + 2 && row > 1 && leftRight >= 0 && row != n) { //индексите между тиретата leftRight на текущи ред
@@ -79,7 +77,6 @@ public class Demo {
                                     }
                                 } else {
                                     System.out.print("-");
-                                    index++;
                                 }
                             }
                         } else {
@@ -99,7 +96,6 @@ public class Demo {
                                         if (row > (n / 2) + 1) {
                                             index++;
                                         }
-
                                     }
                                 }
                             }else if(row >= (n / 2) + 1){ //проверка дали текущи ред е подминал средния ред включитебно на диаманта
@@ -119,8 +115,6 @@ public class Demo {
                                     }
                                 }
                             }
-
-
                         }
                     } else if (index > n - leftRight) {
                         System.out.print("-");
@@ -128,7 +122,6 @@ public class Demo {
                     } else if (index == (n - leftRight)) {
                         System.out.print("*");
                     }
-
                 }
                 System.out.println();
                 if (row <= n / 2) {
@@ -136,13 +129,8 @@ public class Demo {
                 } else {
                     leftRight++;
                 }
-
             }
         }
-
-
-
-
     }
 }
 
