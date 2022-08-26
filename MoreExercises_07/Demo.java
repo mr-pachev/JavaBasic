@@ -25,6 +25,7 @@ public class Demo {
                 for (int midOneDigit = 1; midOneDigit <= a; midOneDigit++) {
                     counterMidOneDigit++;
                     for (int midTwoDigit = 1; midTwoDigit <= b; midTwoDigit++) {
+
                         if (allSunPasscode <= numPassCombinations) {
                             allSunPasscode++;
                             counterMidTwoDigit++;
@@ -83,6 +84,8 @@ public class Demo {
                             }
 
                             System.out.print("|");
+                        }else {
+                            break;
                         }
                     }
                 }
