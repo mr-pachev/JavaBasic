@@ -15,18 +15,18 @@ public class SafePasswordsGenerator_07 {
         int secondDigit = 64;
         boolean isEnough = false;
 
-        for (int thirdDigit = 1; thirdDigit <= a; thirdDigit++) {
-            for (int forthDigit = 1; forthDigit <= b; forthDigit++) {
-                counterCombination++;
+        for (int thirdDigit = 1; thirdDigit <= a; thirdDigit++) { //цикъл за третата цифра
+            for (int forthDigit = 1; forthDigit <= b; forthDigit++) { //цикъл за четвъртата цифра
+                counterCombination++; //ъпдейт на брояча преди проверката
 
-                if (firstDigit > 55){
+                if (firstDigit > 55){ //проверка условие за първата цифра
                     firstDigit = 35;
                 }
-                if (secondDigit > 96){
+                if (secondDigit > 96){ //проверка условие за втората цифра
                     secondDigit = 64;
                 }
 
-                if(counterCombination > maxPassCombinations){
+                if(counterCombination > maxPassCombinations){ //проверка за броя направени комбинаций
                     isEnough = true;
                     break;
                 }
