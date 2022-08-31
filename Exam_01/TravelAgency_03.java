@@ -32,6 +32,9 @@ public class TravelAgency_03 {
                 }else if(vip.equals("no")){
                     priceOvernight = 100;
                 }
+            }else {
+                System.out.println("Invalid input!");
+                isVald = false;
             }
 
         }else if(city.equals("Varna") || city.equals("Burgas")){
@@ -49,6 +52,9 @@ public class TravelAgency_03 {
                 }else if(vip.equals("no")){
                     priceOvernight = 130;
                 }
+            }else {
+                System.out.println("Invalid input!");
+                isVald = false;
             }
         }else {
             System.out.println("Invalid input!");
