@@ -7,7 +7,8 @@ public class PCGameShop_05 {
         Scanner scanner = new Scanner(System.in);
 
         int quantityGamesSold = Integer.parseInt(scanner.nextLine()); //брой продадени игри
-        int count = 1;
+
+        int counter = 1;
         double allPercent = 100; //всички продажби в проценти
         double hearhstonePercent = 0;
         double fornitePercent = 0;
@@ -15,7 +16,7 @@ public class PCGameShop_05 {
         double othersPercent = 0;
         double percent = allPercent / quantityGamesSold; //броя продадени игри разделени по равно в проценти
 
-        while (count <= quantityGamesSold){
+        while (counter <= quantityGamesSold){
             String gameName = scanner.nextLine();
 
             switch (gameName){
@@ -28,12 +29,15 @@ public class PCGameShop_05 {
                 case "Overwatch":
                     overwatchPercent += percent;
                     break;
+                default:
+                    othersPercent += percent;
+                    break;
             }
-            count++;
+            counter++;
         }
         System.out.printf("Hearthstone - %.2f%%%n", hearhstonePercent);
         System.out.printf("Fornite - %.2f%%%n", fornitePercent);
         System.out.printf("Overwatch - %.2f%%%n", overwatchPercent);
-        System.out.printf("Others - %.2f%%%n", othersPercent = allPercent - hearhstonePercent - fornitePercent - overwatchPercent);
+        System.out.printf("Others - %.2f%%%n", othersPercent);
     }
 }
