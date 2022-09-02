@@ -6,60 +6,41 @@ public class NameGame_06 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String name = scanner.nextLine();
-        int counterPointsFirstPlayer = 0;
-        int counterPointsSecondPlayer = 0;
-        int  playersCounter = 0;
-        String firstPlayerName = "";
-        String secondPlayerName = "";
+        String name = scanner.nextLine(); //име на играча
 
-        while (!name.equals("Stop")){
-            playersCounter++;
+        String currentName = "";
+        String winnerName = "";
+        int currentWin = 0;
+        int bestWin = 0;
 
-            if(playersCounter == 1){
+        while (!name.equals("Stop")) {
+            currentName = name;
+            currentWin = 0;
+
             for (int currentLetter = 0; currentLetter < name.length(); currentLetter++) {
-                firstPlayerName = name;
-                int possibleLetter = Integer.parseInt(scanner.nextLine());
-                char possibleSymbol = (char) possibleLetter;
 
-                char currentSymbol = name.charAt(currentLetter);
+                int possibleLetter = Integer.parseInt(scanner.nextLine()); //текущо въведено число за комкретния играч
 
-                if (currentSymbol == possibleSymbol) {
-                    counterPointsFirstPlayer += 10;
+                char currentSymbol = name.charAt(currentLetter); //текущата буква от името
+                int digitCurrentLetter = (int) currentSymbol; //текущата буква, като символ
+
+                if (digitCurrentLetter == possibleLetter) {
+                    currentWin += 10;
                 } else {
-                    counterPointsFirstPlayer += 2;
+                    currentWin += 2;
                 }
             }
-            }else {
-                for (int currentLetter = 0; currentLetter < name.length(); currentLetter++) {
-                    secondPlayerName = name;
-                    int possibleLetter = Integer.parseInt(scanner.nextLine());
-                    char possibleSymbol = (char) possibleLetter;
-
-                    char currentSymbol = name.charAt(currentLetter);
-
-                    if (currentSymbol == possibleSymbol) {
-                        counterPointsSecondPlayer += 10;
-                    } else {
-                        counterPointsSecondPlayer += 2;
-                    }
-
-                }
-
+            //определя името на победителя до момента и най-високият резултат, включително и при равенство
+            if (bestWin < currentWin) {
+                bestWin = currentWin;
+                winnerName = name;
+            } else if (bestWin == currentWin) {
+                winnerName = currentName;
             }
 
             name = scanner.nextLine();
         }
 
-        if (counterPointsFirstPlayer > counterPointsSecondPlayer){
-            System.out.printf("The winner is %s with %d points!", firstPlayerName, counterPointsFirstPlayer);
-        }else if (counterPointsFirstPlayer < counterPointsSecondPlayer){
-            System.out.printf("The winner is %s with %d points!", secondPlayerName, counterPointsSecondPlayer);
-        }else {
-            System.out.printf("The winner is %s with %d points!", secondPlayerName, counterPointsSecondPlayer);
-        }
-
-
-
+        System.out.printf("The winner is %s with %d points!", winnerName, bestWin);
     }
 }
