@@ -6,46 +6,44 @@ public class CinemaVoucher_04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int voucher = Integer.parseInt(scanner.nextLine());
-        String incoming = scanner.nextLine();
-        int counterTickets = 0;
-        int counterOthers = 0;
-        int priceTickets = 0;
-        int priceOthers = 0;
-        int allPrice = 0;
+        int voucher = Integer.parseInt(scanner.nextLine()); //стойност на ваучера
+        String voucherName = scanner.nextLine(); //име на ваучера
 
-        while (allPrice <= voucher) {
-            priceTickets = 0;
-            priceOthers = 0;
-            if (!incoming.equals("End")) {
+        int counterTickets = 0; //брояч на закупени билети
+        int counterOthers = 0; //брояч на закупени други
+        int sumExpensesTickets = 0; //общо разходи за билети
+        int sumExpensesOthers = 0; //общо разходи за други
 
+        while (!voucherName.equals("End")) {
 
-                String firstSymbol = incoming.split("")[0]; //отделяме само първата буква, като стринг
-                char firstSymbolChar = firstSymbol.charAt(0); //превръщаме стринга в чар
-                int firstSymbolInteger = (int) firstSymbolChar; //стойност на буквата според ASCII
+            //остойностяване на евентуалната покупка
+            if (voucherName.length() > 8) {
+                char firstSymbol = voucherName.charAt(0);
+                char secondSymbol = voucherName.charAt(1);
+                sumExpensesTickets += (firstSymbol + secondSymbol);
 
-                String secondSymbol = incoming.split("")[1];
-                char secondSymbolChar = secondSymbol.charAt(0);
-                int secondSymbolInteger = (int) secondSymbolChar;
-
-                //остойностяване на текущата покупка
-                if (incoming.length() > 8) {
-                    priceTickets += firstSymbolInteger + secondSymbolInteger;
-                    allPrice += priceTickets;
-                    voucher -= allPrice;
+                //проверка разходите надвишават ли ваучера
+                if (sumExpensesTickets < voucher) {
+                    counterTickets++;
+                    voucher -= sumExpensesTickets;
                 } else {
-                    priceOthers += firstSymbolInteger;
-                    allPrice += priceOthers;
-                    voucher -= allPrice;
+                    break;
                 }
-
             } else {
-                break;
+                char firstSymbol = voucherName.charAt(0);
+                sumExpensesOthers += firstSymbol;
+
+                //проверка разходите надвишават ли ваучера
+                if (sumExpensesOthers < voucher) {
+                    counterOthers++;
+                    voucher -= sumExpensesOthers;
+                } else {
+                    break;
+                }
             }
 
-            incoming = scanner.nextLine();
+            voucherName = scanner.nextLine();
         }
-
         System.out.println(counterTickets);
         System.out.println(counterOthers);
     }
