@@ -1,4 +1,4 @@
-package Exam_02.GodzillaVs;
+package Exam_02;
 
 import java.util.Scanner;
 
