@@ -29,6 +29,7 @@ public class CinemaVoucher_04 {
                 } else {
                     break;
                 }
+
             } else {
                 char firstSymbol = voucherName.charAt(0);
                 sumExpenses += firstSymbol;
