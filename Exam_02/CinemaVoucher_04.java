@@ -11,32 +11,32 @@ public class CinemaVoucher_04 {
 
         int counterTickets = 0; //брояч на закупени билети
         int counterOthers = 0; //брояч на закупени други
-        int sumExpensesTickets = 0; //общо разходи за билети
-        int sumExpensesOthers = 0; //общо разходи за други
+
 
         while (!voucherName.equals("End")) {
+            int sumExpenses = 0; //общо разходи
 
             //остойностяване на евентуалната покупка
             if (voucherName.length() > 8) {
                 char firstSymbol = voucherName.charAt(0);
                 char secondSymbol = voucherName.charAt(1);
-                sumExpensesTickets += (firstSymbol + secondSymbol);
+                sumExpenses = firstSymbol + secondSymbol;
 
                 //проверка разходите надвишават ли ваучера
-                if (sumExpensesTickets < voucher) {
+                if (sumExpenses <= voucher) {
                     counterTickets++;
-                    voucher -= sumExpensesTickets;
+                    voucher -= sumExpenses;
                 } else {
                     break;
                 }
             } else {
                 char firstSymbol = voucherName.charAt(0);
-                sumExpensesOthers += firstSymbol;
+                sumExpenses += firstSymbol;
 
                 //проверка разходите надвишават ли ваучера
-                if (sumExpensesOthers < voucher) {
+                if (sumExpenses <= voucher) {
                     counterOthers++;
-                    voucher -= sumExpensesOthers;
+                    voucher -= sumExpenses;
                 } else {
                     break;
                 }
