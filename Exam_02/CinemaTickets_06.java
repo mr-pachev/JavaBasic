@@ -10,8 +10,7 @@ public class CinemaTickets_06 {
         int counterStudentTickers = 0; //брояч студентски билети
         int counterStandardTickets = 0; //брояч стандартни билети
         int counterKidTickets = 0; //брояч детски билети
-        int counterAllTickets = 0;
-        boolean isFull = false;
+        int counterAllTickets = 0; //брояч на всички билети
 
         while (!movieName.equals("Finish")) {
             int freeSpaceSalon = Integer.parseInt(scanner.nextLine()); //свободни места в салона
@@ -34,7 +33,6 @@ public class CinemaTickets_06 {
                 if (freeSpaceSalon > seatsCounter) { //проверка дали има свободниместа в салона
                     ticketType = scanner.nextLine();
                 } else {
-                    isFull = true;
                     break;
                 }
 
@@ -42,11 +40,6 @@ public class CinemaTickets_06 {
 
             System.out.printf("%s - %.2f%% full.%n", movieName, seatsCounter * 1.0 * 100 / freeSpaceSalon);
 
-         /*   if (isFull) {
-                break;
-            } else {
-
-            } */
             movieName = scanner.nextLine();
         }
         System.out.printf("Total tickets: %d%n", counterAllTickets);
