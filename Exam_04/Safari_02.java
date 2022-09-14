@@ -2,7 +2,7 @@ package Exam_04;
 
 import java.util.Scanner;
 
-public class safari_02 {
+public class Safari_02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
