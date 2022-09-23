@@ -2,7 +2,7 @@ package Lab._04;
 
 import java.util.Scanner;
 
-public interface Numbers1_NWithStep3_03 {
+public interface Numbers1NWithStep3_03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
